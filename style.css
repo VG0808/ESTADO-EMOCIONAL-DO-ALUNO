@@ -1,0 +1,1019 @@
+/* ==========================================
+   CONFIGURAÇÃO GERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+/* ==========================================
+   TOPO
+========================================== */
+
+.topo {
+    width: 100%;
+    padding: 18px 40px;
+
+    background: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.topo nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topo nav a,
+#themeToggle {
+    border: none;
+    text-decoration: none;
+
+    background: #eef3ff;
+    color: #1d4ed8;
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.topo nav a:hover,
+#themeToggle:hover {
+    transform: translateY(-2px);
+    background: #dce7ff;
+}
+
+
+/* ==========================================
+   TELA INICIAL
+========================================== */
+
+.tela-inicial {
+    max-width: 1150px;
+
+    margin: 60px auto;
+
+    padding: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.caixa-principal {
+    max-width: 700px;
+}
+
+.anonimo {
+    display: inline-block;
+
+    background: #e8f1ff;
+    color: #2563eb;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.caixa-principal h1 {
+    font-size: 48px;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.caixa-principal h1 span {
+    color: #2563eb;
+}
+
+.caixa-principal p {
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #64748b;
+
+    margin-bottom: 30px;
+}
+
+.botao-comecar {
+    border: none;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 16px 25px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-comecar:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.icone-principal {
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: #eaf2ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 110px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================
+   ÁREA DAS EMOÇÕES
+========================================== */
+
+.area-emocoes {
+    max-width: 1200px;
+
+    margin: 70px auto;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.area-emocoes h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.area-emocoes > p {
+    color: #64748b;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   EMOJIS GRANDES E ORGANIZADOS
+========================================== */
+
+.emocoes {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 16px;
+}
+
+.emocao {
+    min-height: 195px;
+
+    border: 2px solid #e2e8f0;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    transition: 0.2s;
+}
+
+.emocao:hover {
+    transform: translateY(-6px);
+
+    border-color: #60a5fa;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+}
+
+.emocao span {
+    font-size: 68px;
+
+    line-height: 1;
+
+    display: block;
+}
+
+.emocao b {
+    font-size: 16px;
+
+    color: #334155;
+}
+
+
+/* EMOÇÃO SELECIONADA */
+
+.emocao.selecionada {
+    border-color: #2563eb;
+
+    background: #eff6ff;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+}
+
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.formulario {
+    display: none;
+
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.formulario h2 {
+    margin-bottom: 10px;
+
+    font-size: 27px;
+}
+
+.formulario p {
+    color: #64748b;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+}
+
+.formulario textarea {
+    width: 100%;
+
+    min-height: 140px;
+
+    resize: vertical;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+
+    margin-bottom: 15px;
+}
+
+.formulario textarea:focus {
+    border-color: #2563eb;
+}
+
+.botao-salvar {
+    width: 100%;
+
+    border: none;
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-salvar:hover {
+    background: #15803d;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   BANCO DE DADOS
+========================================== */
+
+.dashboard {
+    max-width: 1250px;
+
+    margin: 50px auto;
+
+    padding: 0 25px 50px;
+}
+
+
+/* CABEÇALHO DO BANCO */
+
+.dashboard-titulo {
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.dashboard-titulo h1 {
+    font-size: 40px;
+
+    margin: 15px 0 10px;
+}
+
+.dashboard-titulo p {
+    font-size: 18px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   CARDS DO RESUMO
+========================================== */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.card-resumo {
+    background: #ffffff;
+
+    min-height: 135px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.card-resumo > span {
+    font-size: 50px;
+}
+
+.card-resumo small {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.card-resumo strong {
+    display: block;
+
+    font-size: 25px;
+}
+
+
+/* ==========================================
+   ÁREA DO BANCO
+========================================== */
+
+.banco {
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.banco-topo {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.banco-topo h2 {
+    font-size: 29px;
+
+    margin-bottom: 8px;
+}
+
+.banco-topo p {
+    font-size: 17px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   BOTÃO LIMPAR
+========================================== */
+
+.botao-excluir {
+    border: none;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+.botao-excluir:hover {
+    background: #fecaca;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   TABELA
+========================================== */
+
+.tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+thead {
+    background: #eff6ff;
+}
+
+th {
+    padding: 20px;
+
+    text-align: left;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #1e3a8a;
+
+    border-bottom: 2px solid #dbeafe;
+}
+
+td {
+    padding: 20px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #334155;
+
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.sem-registros {
+    text-align: center;
+
+    padding: 50px !important;
+
+    font-size: 19px !important;
+
+    color: #64748b !important;
+}
+
+
+/* ==========================================
+   BOTÃO VOLTAR
+========================================== */
+
+.voltar {
+    margin-top: 25px;
+}
+
+.voltar a {
+    display: inline-block;
+
+    background: #ffffff;
+
+    color: #2563eb;
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.voltar a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   MODO ESCURO
+========================================== */
+
+body.dark {
+    background: #080b12;
+
+    color: #f8fafc;
+}
+
+
+/* TOPO */
+
+body.dark .topo {
+    background: #111827;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .logo {
+    color: #ffffff;
+}
+
+body.dark .topo nav a,
+body.dark #themeToggle {
+    background: #1e293b;
+
+    color: #93c5fd;
+}
+
+body.dark .topo nav a:hover,
+body.dark #themeToggle:hover {
+    background: #334155;
+}
+
+
+/* TELA INICIAL */
+
+body.dark .tela-inicial {
+    background: #111827;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .anonimo {
+    background: #172554;
+
+    color: #93c5fd;
+}
+
+body.dark .caixa-principal p {
+    color: #94a3b8;
+}
+
+body.dark .icone-principal {
+    background: #172554;
+}
+
+
+/* EMOÇÕES */
+
+body.dark .area-emocoes > p {
+    color: #94a3b8;
+}
+
+body.dark .emocao {
+    background: #111827;
+
+    border-color: #334155;
+}
+
+body.dark .emocao:hover {
+    background: #172033;
+
+    border-color: #60a5fa;
+}
+
+body.dark .emocao b {
+    color: #f8fafc;
+}
+
+body.dark .emocao.selecionada {
+    background: #172554;
+
+    border-color: #60a5fa;
+}
+
+
+/* FORMULÁRIO */
+
+body.dark .formulario {
+    background: #111827;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .formulario p {
+    color: #94a3b8;
+}
+
+body.dark .formulario textarea {
+    background: #0f172a;
+
+    color: #ffffff;
+
+    border-color: #334155;
+}
+
+
+/* BANCO */
+
+body.dark .dashboard-titulo {
+    background: #111827;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .dashboard-titulo p {
+    color: #94a3b8;
+}
+
+body.dark .card-resumo {
+    background: #111827;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .card-resumo small {
+    color: #94a3b8;
+}
+
+body.dark .banco {
+    background: #111827;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .banco-topo {
+    border-bottom-color: #334155;
+}
+
+body.dark .banco-topo p {
+    color: #94a3b8;
+}
+
+body.dark .tabela-container {
+    border-color: #334155;
+}
+
+body.dark thead {
+    background: #172554;
+}
+
+body.dark th {
+    color: #bfdbfe;
+
+    border-bottom-color: #334155;
+}
+
+body.dark td {
+    color: #e2e8f0;
+
+    border-bottom-color: #334155;
+}
+
+body.dark tbody tr:hover {
+    background: #172033;
+}
+
+body.dark .voltar a {
+    background: #111827;
+
+    color: #93c5fd;
+}
+
+body.dark footer {
+    color: #64748b;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .emocoes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tela-inicial {
+        margin: 35px 20px;
+
+        padding: 40px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 700px) {
+
+    .topo {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+
+        text-align: center;
+    }
+
+    .topo nav {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .tela-inicial {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 35px 20px;
+
+        margin: 20px 15px;
+    }
+
+    .caixa-principal h1 {
+        font-size: 36px;
+    }
+
+    .caixa-principal p {
+        font-size: 16px;
+    }
+
+    .icone-principal {
+        width: 160px;
+        height: 160px;
+
+        font-size: 80px;
+    }
+
+
+    .emocoes {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .emocao {
+        min-height: 165px;
+    }
+
+    .emocao span {
+        font-size: 58px;
+    }
+
+
+    .dashboard {
+        margin: 25px auto;
+
+        padding: 0 15px 40px;
+    }
+
+    .dashboard-titulo {
+        padding: 25px;
+    }
+
+    .dashboard-titulo h1 {
+        font-size: 32px;
+    }
+
+    .dashboard-titulo p {
+        font-size: 16px;
+    }
+
+
+    .banco {
+        padding: 20px;
+    }
+
+    .banco-topo {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .banco-topo h2 {
+        font-size: 24px;
+    }
+
+    .botao-excluir {
+        width: 100%;
+    }
+
+
+    .card-resumo {
+        min-height: 120px;
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR PEQUENO
+========================================== */
+
+@media (max-width: 420px) {
+
+    .emocoes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .emocao {
+        min-height: 145px;
+
+        padding: 10px;
+    }
+
+    .emocao span {
+        font-size: 50px;
+    }
+
+    .emocao b {
+        font-size: 14px;
+    }
+
+    .dashboard-titulo h1 {
+        font-size: 28px;
+    }
+
+}

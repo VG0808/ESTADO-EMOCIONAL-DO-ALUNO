@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Banco de Dados - Estado Emocional</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+
+    <div class="logo">
+        🧠 Estado Emocional do Estudante
+    </div>
+
+    <nav>
+
+        <button id="themeToggle">
+            🌙 Modo escuro
+        </button>
+
+        <a href="index.html">
+            📝 Fazer registro
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <section class="dashboard">
+
+        <div class="dashboard-titulo">
+
+            <div class="anonimo">
+                🔒 REGISTROS ANÔNIMOS
+            </div>
+
+            <h1>
+                🗄️ Banco de Dados
+            </h1>
+
+            <p>
+                Registros emocionais realizados pelos estudantes.
+            </p>
+
+        </div>
+
+
+        <!-- RESUMO -->
+
+        <div class="resumo">
+
+            <div class="card-resumo">
+
+                <span>📝</span>
+
+                <div>
+                    <small>Total de registros</small>
+                    <strong id="totalRegistros">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span>😊</span>
+
+                <div>
+                    <small>Emoção mais registrada</small>
+                    <strong id="emocaoMaisRegistrada">
+                        Nenhuma
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="card-resumo">
+
+                <span>📅</span>
+
+                <div>
+                    <small>Último registro</small>
+                    <strong id="ultimoRegistro">
+                        Nenhum
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BANCO -->
+
+        <section class="banco">
+
+            <div class="banco-topo">
+
+                <div>
+
+                    <h2>
+                        📊 Registros emocionais
+                    </h2>
+
+                    <p>
+                        Todos os registros são apresentados sem identificação do estudante.
+                    </p>
+
+                </div>
+
+                <button
+                    class="botao-excluir"
+                    onclick="limparBanco()"
+                >
+                    🗑️ Limpar dados
+                </button>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>📅 Data</th>
+
+                            <th>🕐 Hora</th>
+
+                            <th>😊 Emoção</th>
+
+                            <th>💬 Mensagem</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabelaRegistros">
+
+                        <tr>
+
+                            <td
+                                colspan="4"
+                                class="sem-registros"
+                            >
+                                Nenhum registro encontrado.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <div class="voltar">
+
+            <a href="index.html">
+                ← Voltar para o registro
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Estado Emocional do Estudante • Modo Anônimo
+
+</footer>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

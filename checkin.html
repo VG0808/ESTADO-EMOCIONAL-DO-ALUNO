@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Como estou hoje?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="topbar__user">
+            <span class="topbar__avatar">🎓</span>
+            <span>Estado Emocional do Estudante</span>
+        </div>
+
+        <div class="topbar__actions">
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button">
+                🌙 Modo noturno
+            </button>
+
+            <a
+                href="dashboard.html"
+                class="dashboard-btn">
+                🗄️ Banco de Dados
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="checkin">
+
+        <h1 class="checkin__title">
+            Como estou hoje?
+        </h1>
+
+        <p class="checkin__subtitle">
+            Responda como você está se sentindo hoje.
+        </p>
+
+
+        <div class="anonymous-message">
+            🔒 Check-in anônimo
+            <br>
+            Não é necessário informar seu nome.
+        </div>
+
+
+        <form id="checkinForm" class="checkin__form">
+
+
+            <!-- HUMOR -->
+
+            <fieldset class="scale">
+
+                <legend class="scale__label">
+                    😊 Como está seu humor?
+                </legend>
+
+                <div class="scale__options">
+
+                    <input
+                        type="radio"
+                        id="humor1"
+                        name="humor"
+                        value="1"
+                        required>
+
+                    <label for="humor1">😢</label>
+
+
+                    <input
+                        type="radio"
+                        id="humor2"
+                        name="humor"
+                        value="2">
+
+                    <label for="humor2">😕</label>
+
+
+                    <input
+                        type="radio"
+                        id="humor3"
+                        name="humor"
+                        value="3">
+
+                    <label for="humor3">😐</label>
+
+
+                    <input
+                        type="radio"
+                        id="humor4"
+                        name="humor"
+                        value="4">
+
+                    <label for="humor4">🙂</label>
+
+
+                    <input
+                        type="radio"
+                        id="humor5"
+                        name="humor"
+                        value="5">
+
+                    <label for="humor5">😄</label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- ANSIEDADE -->
+
+            <fieldset class="scale">
+
+                <legend class="scale__label">
+                    😰 Como está sua ansiedade?
+                </legend>
+
+                <div class="scale__options">
+
+                    <input
+                        type="radio"
+                        id="ansiedade1"
+                        name="ansiedade"
+                        value="1"
+                        required>
+
+                    <label for="ansiedade1">😌</label>
+
+
+                    <input
+                        type="radio"
+                        id="ansiedade2"
+                        name="ansiedade"
+                        value="2">
+
+                    <label for="ansiedade2">🙂</label>
+
+
+                    <input
+                        type="radio"
+                        id="ansiedade3"
+                        name="ansiedade"
+                        value="3">
+
+                    <label for="ansiedade3">😐</label>
+
+
+                    <input
+                        type="radio"
+                        id="ansiedade4"
+                        name="ansiedade"
+                        value="4">
+
+                    <label for="ansiedade4">😟</label>
+
+
+                    <input
+                        type="radio"
+                        id="ansiedade5"
+                        name="ansiedade"
+                        value="5">
+
+                    <label for="ansiedade5">😰</label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- ESTRESSE -->
+
+            <fieldset class="scale">
+
+                <legend class="scale__label">
+                    😫 Como está seu estresse?
+                </legend>
+
+                <div class="scale__options">
+
+                    <input
+                        type="radio"
+                        id="estresse1"
+                        name="estresse"
+                        value="1"
+                        required>
+
+                    <label for="estresse1">😌</label>
+
+
+                    <input
+                        type="radio"
+                        id="estresse2"
+                        name="estresse"
+                        value="2">
+
+                    <label for="estresse2">🙂</label>
+
+
+                    <input
+                        type="radio"
+                        id="estresse3"
+                        name="estresse"
+                        value="3">
+
+                    <label for="estresse3">😐</label>
+
+
+                    <input
+                        type="radio"
+                        id="estresse4"
+                        name="estresse"
+                        value="4">
+
+                    <label for="estresse4">😣</label>
+
+
+                    <input
+                        type="radio"
+                        id="estresse5"
+                        name="estresse"
+                        value="5">
+
+                    <label for="estresse5">😫</label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- ENERGIA -->
+
+            <fieldset class="scale">
+
+                <legend class="scale__label">
+                    ⚡ Como está sua energia?
+                </legend>
+
+                <div class="scale__options">
+
+                    <input
+                        type="radio"
+                        id="energia1"
+                        name="energia"
+                        value="1"
+                        required>
+
+                    <label for="energia1">🥱</label>
+
+
+                    <input
+                        type="radio"
+                        id="energia2"
+                        name="energia"
+                        value="2">
+
+                    <label for="energia2">😴</label>
+
+
+                    <input
+                        type="radio"
+                        id="energia3"
+                        name="energia"
+                        value="3">
+
+                    <label for="energia3">😐</label>
+
+
+                    <input
+                        type="radio"
+                        id="energia4"
+                        name="energia"
+                        value="4">
+
+                    <label for="energia4">🙂</label>
+
+
+                    <input
+                        type="radio"
+                        id="energia5"
+                        name="energia"
+                        value="5">
+
+                    <label for="energia5">⚡</label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- SONO -->
+
+            <fieldset class="scale">
+
+                <legend class="scale__label">
+                    😴 Como foi seu sono?
+                </legend>
+
+                <div class="scale__options">
+
+                    <input
+                        type="radio"
+                        id="sono1"
+                        name="sono"
+                        value="1"
+                        required>
+
+                    <label for="sono1">😫</label>
+
+
+                    <input
+                        type="radio"
+                        id="sono2"
+                        name="sono"
+                        value="2">
+
+                    <label for="sono2">😴</label>
+
+
+                    <input
+                        type="radio"
+                        id="sono3"
+                        name="sono"
+                        value="3">
+
+                    <label for="sono3">😐</label>
+
+
+                    <input
+                        type="radio"
+                        id="sono4"
+                        name="sono"
+                        value="4">
+
+                    <label for="sono4">🙂</label>
+
+
+                    <input
+                        type="radio"
+                        id="sono5"
+                        name="sono"
+                        value="5">
+
+                    <label for="sono5">😊</label>
+
+                </div>
+
+            </fieldset>
+
+
+            <!-- COMENTÁRIO -->
+
+            <div class="checkin__textarea">
+
+                <label for="comentario">
+                    💬 Quer contar alguma coisa? (opcional)
+                </label>
+
+                <textarea
+                    id="comentario"
+                    name="comentario"
+                    rows="5"
+                    placeholder="Escreva aqui, se quiser..."></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="checkin__submit">
+                🔒 Enviar anonimamente
+            </button>
+
+        </form>
+
+
+        <!-- MENSAGEM -->
+
+        <div
+            id="thankYouMessage"
+            class="thankyou">
+
+            <p>✅</p>
+
+            <h2>
+                Check-in enviado!
+            </h2>
+
+            <p>
+                Seu registro foi enviado anonimamente.
+            </p>
+
+            <br>
+
+            <a
+                href="index.html"
+                class="dashboard-btn">
+                🏠 Voltar ao início
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="helpfooter">
+
+        <p>
+            Estado Emocional do Estudante
+        </p>
+
+        <p class="helpfooter__sub">
+            Registro anônimo.
+        </p>
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

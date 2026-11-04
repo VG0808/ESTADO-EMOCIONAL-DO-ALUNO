@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estado Emocional do Estudante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+    <div class="logo">
+        🧠 Estado Emocional do Estudante
+    </div>
+
+    <nav>
+        <button id="themeToggle">🌙 Modo escuro</button>
+        <a href="dashboard.html">🗄️ Banco de Dados</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="tela-inicial">
+
+        <div class="caixa-principal">
+
+            <div class="anonimo">
+                🔒 MODO ANÔNIMO
+            </div>
+
+            <h1>
+                Como você está<br>
+                <span>se sentindo hoje?</span>
+            </h1>
+
+            <p>
+                Escolha uma opção para registrar seu estado emocional.
+                Não pedimos nome, matrícula ou e-mail.
+            </p>
+
+            <button class="botao-comecar" onclick="mostrarEmocoes()">
+                Como estou hoje? →
+            </button>
+
+        </div>
+
+        <div class="icone-principal">
+            🧠
+        </div>
+
+    </section>
+
+
+    <section id="areaEmocoes" class="area-emocoes">
+
+        <h2>Como você está se sentindo?</h2>
+
+        <p>Escolha uma emoção:</p>
+
+        <div class="emocoes">
+
+            <button class="emocao" onclick="selecionarEmocao('Muito feliz', this)">
+                <span>😄</span>
+                <b>Muito feliz</b>
+            </button>
+
+            <button class="emocao" onclick="selecionarEmocao('Feliz', this)">
+                <span>😊</span>
+                <b>Feliz</b>
+            </button>
+
+            <button class="emocao" onclick="selecionarEmocao('Normal', this)">
+                <span>😐</span>
+                <b>Normal</b>
+            </button>
+
+            <button class="emocao" onclick="selecionarEmocao('Triste', this)">
+                <span>😔</span>
+                <b>Triste</b>
+            </button>
+
+            <button class="emocao" onclick="selecionarEmocao('Estressado', this)">
+                <span>😣</span>
+                <b>Estressado</b>
+            </button>
+
+            <button class="emocao" onclick="selecionarEmocao('Cansado', this)">
+                <span>😴</span>
+                <b>Cansado</b>
+            </button>
+
+        </div>
+
+
+        <div id="formulario" class="formulario">
+
+            <h2>Quer contar mais?</h2>
+
+            <p>🔒 Seu registro continua anônimo.</p>
+
+            <textarea
+                id="mensagem"
+                placeholder="Escreva uma mensagem opcional..."
+            ></textarea>
+
+            <button class="botao-salvar" onclick="salvarRegistro()">
+                💾 Salvar registro
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Estado Emocional do Estudante • Modo Anônimo
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
