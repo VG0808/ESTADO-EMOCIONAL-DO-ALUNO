@@ -27,16 +27,16 @@ const UsuarioSchema = new mongoose.Schema({
 });
 const Usuario = mongoose.models.Usuario || mongoose.model('Usuario', UsuarioSchema);
 
-// Schema de Registros Emocionais
+// Schema de Registros Emocionais (Agora permite registros anônimos)
 const RegistroSchema = new mongoose.Schema({
-  usuarioId: { type: String, required: true },
+  usuarioId: { type: String, default: 'anonimo' },
   emocao: { type: String, required: true },
   mensagem: { type: String, default: '' },
   dataCriacao: { type: Date, default: Date.now }
 });
 const Registro = mongoose.models.Registro || mongoose.model('Registro', RegistroSchema);
 
-// ROTA 1: Cadastrar Usuário
+// ROTA 1: Cadastrar Usuário (caso use no painel admin)
 app.post('/.netlify/functions/api/cadastrar', async (req, res) => {
   try {
     await connectDB();
@@ -53,11 +53,11 @@ app.post('/.netlify/functions/api/cadastrar', async (req, res) => {
 
     res.status(201).json({ mensagem: 'Usuário cadastrado com sucesso!' });
   } catch (erro) {
-    res.status(500).json({ erro: 'Erro ao cadastrar usuário' });
+    res.status(500).json({ erro: 'Erro ao cadastrar usuário', detalhe: erro.message });
   }
 });
 
-// ROTA 2: Login de Usuário
+// ROTA 2: Login de Usuário (caso use no painel admin)
 app.post('/.netlify/functions/api/login', async (req, res) => {
   try {
     await connectDB();
@@ -77,24 +77,18 @@ app.post('/.netlify/functions/api/login', async (req, res) => {
 
     res.json({ mensagem: 'Login realizado!', token });
   } catch (erro) {
-    res.status(500).json({ erro: 'Erro ao realizar login' });
+    res.status(500).json({ erro: 'Erro ao realizar login', detalhe: erro.message });
   }
 });
 
-// ROTA 3: Salvar Registro da Emoção (Protegida)
+// ROTA 3: Salvar Registro da Emoção (Anônimo - sem exigir login)
 app.post('/.netlify/functions/api/registros', async (req, res) => {
   try {
     await connectDB();
 
-    const authHeader = req.headers.authorization;
-    if (!authHeader) return res.status(401).json({ erro: 'Faça login primeiro!' });
-
-    const token = authHeader.split(' ')[1];
-    const dadosUsuario = jwt.verify(token, JWT_SECRET);
-
     const { emocao, mensagem } = req.body;
     const novoRegistro = new Registro({
-      usuarioId: dadosUsuario.id,
+      usuarioId: 'anonimo',
       emocao,
       mensagem
     });
@@ -102,7 +96,7 @@ app.post('/.netlify/functions/api/registros', async (req, res) => {
     await novoRegistro.save();
     res.status(201).json({ mensagem: 'Emoção registrada com sucesso!' });
   } catch (erro) {
-    res.status(401).json({ erro: 'Sessão inválida ou expirada' });
+    res.status(500).json({ erro: 'Erro ao salvar no banco de dados', detalhe: erro.message });
   }
 });
 
